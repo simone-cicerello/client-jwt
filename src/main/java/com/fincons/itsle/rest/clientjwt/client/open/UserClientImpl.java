@@ -1,9 +1,11 @@
-package com.fincons.itsle.rest.clientjwt.service.open;
+package com.fincons.itsle.rest.clientjwt.client.open;
 
+import com.fincons.itsle.rest.clientjwt.client.UserClient;
 import com.fincons.itsle.rest.clientjwt.config.Configs;
 import com.fincons.itsle.rest.clientjwt.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,8 @@ import java.util.Objects;
 
 @Service
 @Slf4j
-public class UserService {
+@Profile("!jwt")
+public class UserClientImpl implements UserClient {
 
     @Autowired
     private Configs configs;

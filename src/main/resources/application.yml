@@ -8,6 +8,10 @@ logging:
         itsle:
           rest: DEBUG
 
+spring:
+  profiles:
+    active: jwt
+
 # Client credentials
 auth:
   username: itsUser
